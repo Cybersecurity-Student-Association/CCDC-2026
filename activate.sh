@@ -66,12 +66,5 @@ function lockall() {
 	lock /etc
 }
 
-return
-
-case ":$PATH:" in
-	*"$TARGET_DIR"*)
-		;;
-	*)
-		export PATH="$TARGET_DIR:$PATH"
-	;;
-	esac
+export PATH=/usr/share/CCDC-2026/backups/initial/usr/bin:$PATH
+export PATH=/usr/share/CCDC-2026/backups/initial/bin:$PATH
