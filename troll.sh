@@ -67,19 +67,19 @@ function delete {
 }
 
 
-delete ls
-delete vim
-delete cat
-delete vi
-delete nano
-delete find
-delete grep
-delete ps
+#delete ls
+#delete vim
+#delete cat
+#delete vi
+#delete nano
+#delete find
+#delete grep
+#delete ps
 delete top
 delete whoami
 delete id
-delete wget
-delete curl
+#delete wget
+#delete curl
 delete awk
 delete mkdir
 delete rmdir
@@ -94,4 +94,4 @@ delete addgroup
 delete groupdel
 delete delgroup
 delete usermod
-delete sudo
+#delete sudo

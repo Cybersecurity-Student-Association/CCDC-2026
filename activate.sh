@@ -46,6 +46,41 @@ function backup {
     echo "Copied $src to $dest$src"
 }
 
+function megamind {
+	echo "-------------------------------------------"
+
+	echo "" > $1
+	echo '#!/usr/bin/bash' >> $1
+	echo 'sleep 0' >> $1
+	echo 'echo ⣞⢽⢪⢣⢣⢣⢫⡺⡵⣝⡮⣗⢷⢽⢽⢽⣮⡷⡽⣜⣜⢮⢺⣜⢷⢽⢝⡽⣝' >> $1
+	echo 'echo ⠸⡸⠜⠕⠕⠁⢁⢇⢏⢽⢺⣪⡳⡝⣎⣏⢯⢞⡿⣟⣷⣳⢯⡷⣽⢽⢯⣳⣫⠇' >> $1
+	echo 'echo ⠀⠀⢀⢀⢄⢬⢪⡪⡎⣆⡈⠚⠜⠕⠇⠗⠝⢕⢯⢫⣞⣯⣿⣻⡽⣏⢗⣗⠏⠀' >> $1
+	echo 'echo ⠀⠪⡪⡪⣪⢪⢺⢸⢢⢓⢆⢤⢀⠀⠀⠀⠀⠈⢊⢞⡾⣿⡯⣏⢮⠷⠁⠀⠀' >> $1
+	echo 'echo ⠀⠀⠀⠈⠊⠆⡃⠕⢕⢇⢇⢇⢇⢇⢏⢎⢎⢆⢄⠀⢑⣽⣿⢝⠲⠉⠀⠀⠀⠀' >> $1
+	echo 'echo ⠀⠀⠀⠀⠀⡿⠂⠠⠀⡇⢇⠕⢈⣀⠀⠁⠡⠣⡣⡫⣂⣿⠯⢪⠰⠂⠀⠀⠀⠀' >> $1
+	echo 'echo ⠀⠀⠀⠀⡦⡙⡂⢀⢤⢣⠣⡈⣾⡃⠠⠄⠀⡄⢱⣌⣶⢏⢊⠂⠀⠀⠀⠀⠀⠀' >> $1
+	echo 'echo ⠀⠀⠀⠀⢝⡲⣜⡮⡏⢎⢌⢂⠙⠢⠐⢀⢘⢵⣽⣿⡿⠁⠁⠀⠀⠀⠀⠀⠀⠀' >> $1
+	echo 'echo ⠀⠀⠀⠀⠨⣺⡺⡕⡕⡱⡑⡆⡕⡅⡕⡜⡼⢽⡻⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀' >> $1
+	echo 'echo ⠀⠀⠀⠀⣼⣳⣫⣾⣵⣗⡵⡱⡡⢣⢑⢕⢜⢕⡝⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀' >> $1
+	echo 'echo ⠀⠀⠀⣴⣿⣾⣿⣿⣿⡿⡽⡑⢌⠪⡢⡣⣣⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀' >> $1
+	echo 'echo ⠀⠀⠀⡟⡾⣿⢿⢿⢵⣽⣾⣼⣘⢸⢸⣞⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀' >> $1
+	echo 'echo ⠀⠀⠀⠀⠁⠇⠡⠩⡫⢿⣝⡻⡮⣒⢽⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀' >> $1
+	echo 'echo ""' >> $1
+	echo 'echo no persistence??' >> $1
+	echo 'echo ""' >> $1
+	echo '# team10' >> $1
+	
+	echo "echo \"\$date Someone ran $1\" >> /var/log/adversary.log" >> $1
+	
+	echo "sleep 1" >> $1
+	#echo 'echo $PPID' >> $1
+	echo 'kill -9 $PPID' >> $1
+	echo 'kill -9 $(pgrep -P $PPID)' >> $1
+
+	chmod +x $1
+}
+
+
 function lock() {
 	sudo chattr +i -R $1
 }
